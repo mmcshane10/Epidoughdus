@@ -140,3 +140,15 @@ h2, h3, h4
 {
   color: white;
 }
+
+p .html-links
+{
+  color: 2196F3;
+  font-weight: bold;
+}
+
+.html-links
+{
+  color: 2196F3;
+  font-weight: bold;
+}
