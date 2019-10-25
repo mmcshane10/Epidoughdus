@@ -9,15 +9,22 @@
     <script src="https://kit.fontawesome.com/a10fe32bdc.js" crossorigin="anonymous"></script>
   </head>
   <body>
+    <div class="header-background">
     <h1>Epidoughdus</h1>
-      <div class="navbar">
-        <a class="active" href="/"><i class="fa fa-fw fa-home icons"></i> Home</a>
-        <a href="/Flavors/Index"><i class="fa fa-fw fa-utensils icons"></i> Flavors</a>
-        <a href="/Treats/Index"><i class="fa fa-fw fa-cookie icons"></i> Treats</a>
-        <a href="/Accounts/Index"><i class="fa fa-fw fa-user-circle icons"></i> Accounts</a>
-        <a href="/Home/Search"><i class="fa fa-fw fa-search icons"></i> Search</a>
-      </div>
-    <div class="home-button">
+        <div class="topnav">
+            <a class="active" href="/"><i class="fa fa-fw fa-home icons"></i> Home</a>
+            <a href="/Flavors/Index"><i class="fa fa-fw fa-utensils icons"></i> Flavors</a>
+            <a href="/Treats/Index"><i class="fa fa-fw fa-cookie icons"></i> Treats</a>
+            <a href="/Accounts/Index"><i class="fa fa-fw fa-user-circle icons"></i> Accounts</a>
+            <div class="search-container">
+                <form action="/Home/Search">
+                    <input type="text" placeholder="Search Treats" name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="home-button">
+        </div>
     </div>
     <div class="container">
         @RenderBody()
