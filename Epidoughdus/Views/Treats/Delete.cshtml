@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Epidoughdus.Models.Treat
+
+<h2>Confirm Deletion</h2>
+
+<p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p>
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Delete" class="btn btn-info" />
+}
+@Html.ActionLink("Back to List", "Index")

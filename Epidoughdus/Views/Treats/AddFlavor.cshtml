@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Epidoughdus.Models.Treat
+
+<h2>Add To Flavor Category</h2>
+
+<h4>@Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.TreatId)
+
+    @Html.Label("Select Category")
+    @Html.DropDownList("FlavorId")
+
+    <input type="submit" value="Save" class="btn btn-default"/>
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>

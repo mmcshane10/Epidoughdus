@@ -1,0 +1,33 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Epidoughdus.Models.Treat
+
+<h2>Edit</h2>
+
+<h3>Edit this recipe: @Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.TreatId)
+
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name, new {@class = "form-control"})
+
+    @Html.LabelFor(model => model.Calories)
+    @Html.TextBoxFor(model => model.Calories, new {@class = "form-control"})
+
+    @Html.LabelFor(model => model.Rating)
+    <select id="Rating" name="Rating" class = "form-control">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+
+    <input type="submit" value="Save" class="btn btn-info"/>
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>

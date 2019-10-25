@@ -1,0 +1,45 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Epidoughdus.Models;
+@model IEnumerable<Epidoughdus.Models.Treat>
+
+<h2>Items for @User.Identity.Name</h2>
+
+@if (Model.Any())
+{
+    @foreach (Treat treat in Model)
+    {
+        <div class="well">
+            <h3>@Html.ActionLink($"{treat.Name}", "Details", new { id = treat.TreatId })</h3>
+            <h3>Calories: @treat.Calories</h3>
+            <h3>
+              @switch(treat.Rating)
+                {
+                  case "1":
+                    <i class="fas fa-star"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i>
+                    break;
+                  case "2":
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i>
+                    break;
+                  case "3":
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i>
+                    break;
+                  case "4":
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star fas-faded"></i>
+                    break;
+                  case "5":
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    break;
+                }
+              </h3>
+        </div>
+    }
+} 
+else
+{
+  <h3>No recipes have been added yet!</h3>
+}
+
+<p>@Html.ActionLink("Add New Treat", "Create", new {}, new {@class = "html-links"}) 

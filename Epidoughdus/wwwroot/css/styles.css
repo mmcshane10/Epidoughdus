@@ -1,4 +1,16 @@
-﻿
+﻿h1
+{
+  font-family:'Fugaz One', cursive;
+  text-align: center;
+  font-size: 50px;
+  color: blue;
+}
+
+h2, h3, h4
+{
+  font-family: 'Oxygen', sans-serif;
+}
+
 /* Style the navigation bar */
 .navbar {
   width: 100%;
@@ -12,7 +24,7 @@
   text-align: center;
   padding: 12px;
   color: white;
-  font-family: 'Righteous', cursive;
+  font-family: 'Oxygen', sans-serif;
   text-decoration: none;
   font-size: 16px;
   text-shadow: 2px 2px 2px black;
