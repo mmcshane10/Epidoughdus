@@ -21,10 +21,16 @@ namespace Epidoughdus.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Search(string search)
+        public ActionResult Search()
         {
-            search = search.ToLower();
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Search(string query)
+        {
+            query = query.ToLower();
+            System.Console.WriteLine(query);
             List<Treat> model = _db.Treats.Include(treat => treat.Flavors).ToList();
             List<Treat> newModel = new List<Treat> { };
             for (int i = 0; i < model.Count; i++)
@@ -32,7 +38,7 @@ namespace Epidoughdus.Controllers
                 model[i].Name = model[i].Name.ToLower();
                 newModel.Add(model[i]);
             }
-            return RedirectToAction("Search", newModel.Where(r => r.Name.Contains(search)).ToList());
+            return RedirectToAction("Search", "Home", newModel.Where(r => r.Name.Contains(query)).ToList());
         }
     }
 }
