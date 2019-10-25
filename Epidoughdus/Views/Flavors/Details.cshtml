@@ -1,0 +1,49 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Epidoughdus.Models.Flavor;
+
+<h2>Flavor Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Type): @Html.DisplayFor(model => model.Type)</h3>
+
+@if(@Model.Treats.Count == 0)
+{
+  <h4>There are no treats listed under this flavor type yet.</h4>
+}
+else
+{
+  <h4>Treats of this flavor type:</h4>
+  
+  @foreach(var join in Model.Treats)
+  {
+    <div class="well">
+            <h4>@Html.ActionLink($"{join.Treat.Name}", "Details", "Treats", new { id = join.Treat.TreatId })</h4>
+            <h5>Calories: @join.Treat.Calories</h5>
+            <h3>
+              @switch(join.Treat.Rating)
+                {
+                  case "1":
+                    <i class="fas fa-star"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i>
+                    break;
+                  case "2":
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i>
+                    break;
+                  case "3":
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i>
+                    break;
+                  case "4":
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star fas-faded"></i>
+                    break;
+                  case "5":
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    break;
+                }
+              </h3>
+        </div>
+  }
+  
+}
+
+<p>@Html.ActionLink("Back to Flavors", "Index") | @Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId }) | @Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorId })
