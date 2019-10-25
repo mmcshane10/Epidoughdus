@@ -6,13 +6,13 @@ using Epidoughdus.ViewModels;
 
 namespace Epidoughdus.Controllers
 {
-    public class AccountController : Controller
+    public class AccountsController : Controller
     {
         private readonly EpidoughdusContext _db;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, EpidoughdusContext db)
+        public AccountsController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, EpidoughdusContext db)
         {
             _userManager = userManager;
             _signInManager = signInManager;
