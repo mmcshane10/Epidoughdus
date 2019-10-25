@@ -1,6 +1,6 @@
 ﻿.header-background
 {
-  background-color: #170a19;
+  background-color: #170a19 !important;
 }
 
 #home-background
@@ -77,7 +77,7 @@ h2, h3, h4
 }
 
 .topnav .search-container button:hover {
-  background: #da9833;
+  background: #ec9b3b;
 }
 
 @media screen and (max-width: 600px) {
@@ -104,5 +104,20 @@ h2, h3, h4
 
 .fa-star
 {
-  text-shadow: 2px 2px 2px #da9833;
+  text-shadow: 2px 2px 2px #ec9b3b;
+}
+
+.icons
+{
+  color: #ec9b3b
+}
+
+.topnav a:hover > .icons
+{
+  color: white;
+}
+
+.fa-home
+{
+  color: white;
 }

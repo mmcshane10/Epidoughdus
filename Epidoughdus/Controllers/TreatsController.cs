@@ -81,7 +81,7 @@ namespace Epidoughdus.Controllers
             return RedirectToAction("Details", "Treats", new { id });
         }
 
-        public ActionResult AddCuisine(int id)
+        public ActionResult AddFlavor(int id)
         {
             var thisTreat = _db.Treats.FirstOrDefault(treat => treat.TreatId == id);
             ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Type");
@@ -89,7 +89,7 @@ namespace Epidoughdus.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddCuisine(Treat treat, int FlavorId)
+        public ActionResult AddFlavor(Treat treat, int FlavorId)
         {
             if (FlavorId != 0)
             {
@@ -116,7 +116,7 @@ namespace Epidoughdus.Controllers
         }
 
         [HttpPost]
-        public ActionResult DeleteCuisine(int joinId)
+        public ActionResult DeleteFlavor(int joinId)
         {
             var joinEntry = _db.FlavorTreats.FirstOrDefault(entry => entry.FlavorTreatId == joinId);
             _db.FlavorTreats.Remove(joinEntry);

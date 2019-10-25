@@ -41,7 +41,7 @@ else
   <div class="flavor-wrap">
     @foreach(var join in Model.Flavors)
     {
-        <p>@join.Flavor.Type</p>
+        <li><h4>@join.Flavor.Type</h4></li>
         @using (Html.BeginForm("DeleteFlavor", "Treats"))
         {
         @Html.Hidden("joinId", @join.FlavorTreatId)
