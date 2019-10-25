@@ -32,7 +32,7 @@ namespace Epidoughdus.Controllers
                 model[i].Name = model[i].Name.ToLower();
                 newModel.Add(model[i]);
             }
-            return View("Search", newModel.Where(r => r.Name.Contains(search)).ToList());
+            return RedirectToAction("Search", newModel.Where(r => r.Name.Contains(search)).ToList());
         }
     }
 }
