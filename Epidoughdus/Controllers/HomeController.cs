@@ -21,11 +21,6 @@ namespace Epidoughdus.Controllers
             return View();
         }
 
-        public ActionResult Search()
-        {
-            return View();
-        }
-
         [HttpPost]
         public ActionResult Search(string query)
         {
@@ -38,7 +33,7 @@ namespace Epidoughdus.Controllers
                 model[i].Name = model[i].Name.ToLower();
                 newModel.Add(model[i]);
             }
-            return RedirectToAction("Search", "Home", newModel.Where(r => r.Name.Contains(query)).ToList());
+            return View("Search", newModel.Where(r => r.Name.Contains(query)).ToList());
         }
     }
 }
