@@ -5,10 +5,13 @@
 @model Epidoughdus.Models.Flavor
 
 <h2>Add A New Flavor</h2>
+
+<div class="form-group col-md-6">
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.Type)
-    @Html.TextBoxFor(model => model.Type)
+    @Html.TextBoxFor(model => model.Type, new {@class = "form-control"})<br>
     <input type="submit" value="Add new flavor" class="btn btn-info" />
 }
-<p>@Html.ActionLink("Show All Flavors", "Index", new {}, new {@class = "html-links"}) </p>
+<p>@Html.ActionLink("Show All Flavors", "Index", new {}, new {@class = "html-links"})</p>
+</div>

@@ -7,6 +7,7 @@
 
 <h2>Items for @User.Identity.Name</h2>
 
+<p>@Html.ActionLink("Add New Treat", "Create", new {}, new {@class = "html-links"}) 
 @if (Model.Any())
 {
     @foreach (Treat treat in Model)
@@ -41,5 +42,3 @@ else
 {
   <h3>No recipes have been added yet!</h3>
 }
-
-<p>@Html.ActionLink("Add New Treat", "Create", new {}, new {@class = "html-links"}) 

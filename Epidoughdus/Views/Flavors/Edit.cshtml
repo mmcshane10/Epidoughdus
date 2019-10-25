@@ -4,17 +4,17 @@
 
 @model Epidoughdus.Models.Flavor
 
-<h2>Edit</h2>
+<h2>Edit Flavor</h2>
 
-<h4>Edit this cuisine: @Html.DisplayFor(model => model.Type)</h4>
-
+<div class="form-group col-md-6">
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(model => model.FlavorId)
+    @Html.HiddenFor(model => model.FlavorId)<br>
 
-    @Html.LabelFor(model => model.Type)
-    @Html.EditorFor(model => model.Type)
+    @Html.LabelFor(model => model.Type, "Type: ")
+    @Html.EditorFor(model => model.Type, new {@class = "form-control"})<br>
 
     <input type="submit" value="Save" class="btn btn-info"/>
 }
-<p>@Html.ActionLink("Back to Flavor List", "Index")</p>
+<p>@Html.ActionLink("Back to List", "Index")</p>
+</div>

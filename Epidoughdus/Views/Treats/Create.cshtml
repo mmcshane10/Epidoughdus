@@ -6,22 +6,23 @@
 
 <h3>Add A New Treat</h3>
 
+<div class="form-group col-md-6">
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Name, "Treat Name:")
+    @Html.LabelFor(model => model.Name, "Treat Name: ")
     @Html.TextBoxFor(model => model.Name, new {@class = "form-control"})
 
-    @Html.LabelFor(model => model.Calories, "Calories:")
+    @Html.LabelFor(model => model.Calories, "Calories: ")
     @Html.TextBoxFor(model => model.Calories, new {@class = "form-control"})
 
     @Html.LabelFor(model => model.Rating)
-    <select id="Rating" name="Rating">
+    <select id="Rating" name="Rating" class="form-control">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
         <option value="5">5</option>
-    </select>
+    </select><br>
 
     @Html.Label("Select Flavor Type")
     @Html.DropDownList("FlavorId")<br>
@@ -29,3 +30,4 @@
     <input type="submit" value="Add Treat" class="btn btn-info" />
 }
 <p>@Html.ActionLink("View All Treats", "Index", new {}, new {@class = "html-links"})</p>
+</div>

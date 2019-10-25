@@ -4,10 +4,9 @@
 
 @model Epidoughdus.Models.Treat
 
-<h2>Edit</h2>
+<h2>Edit Recipe</h2>
 
-<h3>Edit this recipe: @Html.DisplayFor(model => model.Name)</h4>
-
+<div class="form-group col-md-6">
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.TreatId)
@@ -25,9 +24,9 @@
         <option value="3">3</option>
         <option value="4">4</option>
         <option value="5">5</option>
-    </select>
+    </select><br>
 
     <input type="submit" value="Save" class="btn btn-info"/>
 }
-
 <p>@Html.ActionLink("Back to list", "Index")</p>
+</div>
