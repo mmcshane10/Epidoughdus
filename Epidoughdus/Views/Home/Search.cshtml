@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Epidoughdus.Models;
+@model List<Treat>;
+
+<h1>Search Results</h1>
+
+@foreach (Treat treat in @Model)
+{
+    <div class="well">
+        <h4>@Html.ActionLink($"{treat.Name}", "Details", "Treats", new { id = treat.TreatId })</h4>
+        <h5>Calories: @treat.Calories</h5>
+    </div>
+}
+
+<p>@Html.ActionLink("Back", "Index", new {}, new {@class = "html-links"})</p>
