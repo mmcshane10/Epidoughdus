@@ -3,14 +3,28 @@
   background-color: #e9e9e9;
 }
 
+#home-background
+  {
+  height: 900px;
+  width: 100%;
+  background-image: url("../img/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  }
+
 h1
 {
   font-family:'Fugaz One', cursive;
   text-align: center;
   font-size: 60px;
   color: #2196F3;
-  text-shadow: 2px 2px #da9833;
+  text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
   padding-top: 20px;
+
 }
 
 h2, h3, h4
